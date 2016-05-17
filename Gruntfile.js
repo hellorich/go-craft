@@ -142,7 +142,6 @@ module.exports = function(grunt) {
             cwd: '<%= path.src %>/html',
             dest: '<%= path.dest.templates %>/',
             expand: true,
-            flatten: true,
             src: '**/*.html'
           }
         ]
@@ -218,7 +217,7 @@ module.exports = function(grunt) {
     'requirejs',
     'sass',
     'imagemin',
-    'mustache_render'
+    'htmlmin'
   ]);
   
   grunt.registerTask('go', [
