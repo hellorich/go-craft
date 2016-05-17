@@ -41,9 +41,9 @@ module.exports = function(grunt) {
         files: '<%= path.src %>/img/**/*.{gif,png,jpg,svg}',
         tasks: ['imagemin']
       },
-      mustache_render: {
-        files: '<%= path.src %>/mustache/**/*.{mustache,json}',
-        tasks: ['mustache_render']
+      htmlmin: {
+        files: '<%= path.src %>/templates/**/*.html',
+        tasks: ['htmlmin']
       }
     },
 
@@ -131,22 +131,24 @@ module.exports = function(grunt) {
       }
     },
 
-    mustache_render: {
-      options: {
-        directory: '<%= path.src %>/mustache/',
-        pretty: true
-      },
-      templates: {
+    htmlmin: {
+      dist: {
+        options: {
+          removeComments: true,
+          collapseWhitespace: true
+        },
         files: [
           {
-            data: '<%= path.src %>/mustache/data/index.json',
-            template: '<%= path.src %>/mustache/index.mustache',
-            dest: '<%= path.dest.templates %>/index.php'
+            cwd: '<%= path.src %>/html',
+            dest: '<%= path.dest.templates %>/',
+            expand: true,
+            flatten: true,
+            src: '**/*.html'
           }
         ]
       }
     },
-
+    
     // Tests
 
     jshint: {

@@ -1,7 +1,7 @@
 {
   "name": "go-php",
   "description": "Starter Grunt installation with some useful packages and PHP support.",
-  "author" : "Rich Cookson <rich@frobitz.com>",
+  "author": "Rich Cookson <rich@frobitz.com>",
   "version": "0.1.0",
   "license": "UNLICENSED",
   "repository": {
@@ -11,11 +11,11 @@
   "devDependencies": {
     "grunt": "*",
     "grunt-browser-sync": "*",
+    "grunt-contrib-htmlmin": "^1.4.0",
     "grunt-contrib-imagemin": "*",
     "grunt-contrib-jshint": "*",
     "grunt-contrib-requirejs": "*",
     "grunt-contrib-watch": "*",
-    "grunt-mustache-render": "*",
     "grunt-newer-explicit": "*",
     "grunt-php": "^1.5.1",
     "grunt-sass": "*",
