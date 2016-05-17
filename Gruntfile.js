@@ -9,7 +9,11 @@ module.exports = function(grunt) {
   var path = {
     conf: 'config',
     src: 'src',
-    dest: 'dist'
+    dest: {
+      assets: 'public/assets',
+      templates: 'craft/templates'
+    },
+    root: 'public'
   };
 
   // Project configuration.
@@ -52,7 +56,7 @@ module.exports = function(grunt) {
           include: '<%= path.src %>/js/main',
           mainConfigFile: '<%= path.conf %>/require.js',
           name: '<%= path.src %>/js/lib/almond',
-          out: '<%= path.dest %>/assets/js/scripts.js'
+          out: '<%= path.dest.assets %>/js/scripts.js'
         }        
       }
     },
@@ -64,7 +68,7 @@ module.exports = function(grunt) {
           style: 'compressed'
         },
         files: {
-          '<%= path.dest %>/assets/css/styles.css': '<%= path.src %>/sass/manifest.scss'
+          '<%= path.dest.assets %>/css/styles.css': '<%= path.src %>/sass/manifest.scss'
         }
       }
     },
@@ -73,7 +77,7 @@ module.exports = function(grunt) {
       gif: {
         files: [
           {
-            dest: '<%= path.dest %>/assets/img/gif/',
+            dest: '<%= path.dest.assets %>/img/gif/',
             expand: true,
             ext: '.gif',
             flatten: true,
@@ -87,7 +91,7 @@ module.exports = function(grunt) {
         },
         files: [
           {
-            dest: '<%= path.dest %>/assets/img/png/',
+            dest: '<%= path.dest.assets %>/img/png/',
             expand: true,
             ext: '.png',
             flatten: true,
@@ -101,7 +105,7 @@ module.exports = function(grunt) {
         },
         files: [
           {
-            dest: '<%= path.dest %>/assets/img/jpg/',
+            dest: '<%= path.dest.assets %>/img/jpg/',
             expand: true,
             ext: '.jpg',
             flatten: true,
@@ -117,7 +121,7 @@ module.exports = function(grunt) {
         },
         files: [
           {
-            dest: '<%= path.dest %>/assets/img/svg/',
+            dest: '<%= path.dest.assets %>/img/svg/',
             expand: true,
             ext: '.svg',
             flatten: true,
@@ -137,7 +141,7 @@ module.exports = function(grunt) {
           {
             data: '<%= path.src %>/mustache/data/index.json',
             template: '<%= path.src %>/mustache/index.mustache',
-            dest: '<%= path.dest %>/index.php'
+            dest: '<%= path.dest.templates %>/index.php'
           }
         ]
       }
@@ -185,9 +189,9 @@ module.exports = function(grunt) {
       dist: {
         bsFiles: {
           src: [
-            '<%= path.dest %>/assets/js/*.js',
-            '<%= path.dest %>/assets/css/*.css',
-            '<%= path.dest %>/*.php'
+            '<%= path.dest.assets %>/js/*.js',
+            '<%= path.dest.assets %>/css/*.css',
+            '<%= path.dest.root %>/*.php'
           ]
         },
         options: {
