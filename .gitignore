@@ -1,0 +1,14 @@
+# Ignore SASS caches
+.sass-cache
+
+# Ignore OS X system files
+.DS_Store
+
+# Ignore folder where generated templates are output
+craft/templates
+
+# Ignore folder where CSS, JS, image and other generated assets are output
+public/assets
+
+# Ignore Go dependencies.
+node_modules
