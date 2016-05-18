@@ -4,6 +4,9 @@
 # Ignore OS X system files
 .DS_Store
 
+# Ignore storage folder
+craft/storage
+
 # Ignore folder where generated templates are output
 craft/templates
 
