@@ -38,8 +38,13 @@ module.exports = function(grunt) {
         tasks: ['sass'],
       },
       imagemin: {
-        files: '<%= path.src %>/img/**/*.{gif,png,jpg,svg}',
-        tasks: ['imagemin']
+        files: [
+          '<%= path.src %>/img/gif/**/*.gif',
+          '<%= path.src %>/img/png/**/*.png',
+          '<%= path.src %>/img/jpg/**/*.jpg',
+          '<%= path.src %>/img/svg/**/*.svg'
+        ],
+        tasks: ['newer:imagemin']
       },
       htmlmin: {
         files: '<%= path.src %>/templates/**/*.html',
@@ -77,11 +82,11 @@ module.exports = function(grunt) {
       gif: {
         files: [
           {
+            cwd: '<%= path.src %>/img/gif/',
             dest: '<%= path.dest.assets %>/img/gif/',
             expand: true,
             ext: '.gif',
-            flatten: true,
-            src: ['<%= path.src %>/img/gif/*.gif']
+            src: '**/*.gif'
           }
         ]
       },
@@ -91,11 +96,11 @@ module.exports = function(grunt) {
         },
         files: [
           {
+            cwd: '<%= path.src %>/img/png/',
             dest: '<%= path.dest.assets %>/img/png/',
             expand: true,
             ext: '.png',
-            flatten: true,
-            src: ['<%= path.src %>/img/png/*.png']
+            src: '**/*.png'
           }
         ]
       },
@@ -105,11 +110,11 @@ module.exports = function(grunt) {
         },
         files: [
           {
+            cwd: '<%= path.src %>/img/jpg/',
             dest: '<%= path.dest.assets %>/img/jpg/',
             expand: true,
             ext: '.jpg',
-            flatten: true,
-            src: ['<%= path.src %>/img/jpg/*.jpg'],
+            src: '**/*.jpg',
           }
         ]
       },
@@ -121,11 +126,11 @@ module.exports = function(grunt) {
         },
         files: [
           {
+            cwd: '<%= path.src %>/img/svg/',
             dest: '<%= path.dest.assets %>/img/svg/',
             expand: true,
             ext: '.svg',
-            flatten: true,
-            src: ['<%= path.src %>/img/svg/*.svg']
+            src: '**/*.svg'
           }
         ]
       }
