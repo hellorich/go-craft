@@ -8,5 +8,13 @@
  */
 
 return array(
-
+  'localhost' => array(
+    'devMode' => true,
+    'siteUrl' => 'http://127.0.0.1:8010',
+    'environmentVariables' => array(
+      'basePath' => '/users/rich/projects/tools/go-craft/public/',
+      'baseUrl'  => 'http://127.0.0.1:8010/',
+    ),
+    'testToEmailAddress' => 'rich.cookson@gmail.com',
+  ),
 );
