@@ -15,3 +15,6 @@ public/assets
 
 # Ignore Go dependencies.
 node_modules
+
+# Ignore Craft license
+craft/config/license.key
