@@ -179,7 +179,7 @@ module.exports = function(grunt) {
     php: {
       dist: {
         options: {
-          base: '<%= path.dest %>',
+          base: '<%= path.root %>',
           hostname: '127.0.0.1',
           port: '8010'
         }
@@ -192,7 +192,7 @@ module.exports = function(grunt) {
           src: [
             '<%= path.dest.assets %>/js/*.js',
             '<%= path.dest.assets %>/css/*.css',
-            '<%= path.dest.root %>/*.php'
+            '<%= path.root %>/*.php'
           ]
         },
         options: {
